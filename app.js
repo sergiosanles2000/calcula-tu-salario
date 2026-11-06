@@ -43,24 +43,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const ssEmployeeRate = 0.0647;
     const ssAnnual = ssBase * ssEmployeeRate;
 
-    // 2. Personal & Family Minimums (Mínimo personal y familiar)
+    // 2. Personal & Family Minimums (Mínimo personal y familiar arts. 57 y 58 LIRPF)
     let personalMin = 5550; // Base individual
     if (children === 1) personalMin += 2400;
     else if (children === 2) personalMin += 2400 + 2700;
-    else if (children >= 3) personalMin += 2400 + 2700 + (children - 2) * 4000;
+    else if (children === 3) personalMin += 2400 + 2700 + 4000;
+    else if (children >= 4) personalMin += 2400 + 2700 + 4000 + (children - 3) * 4500;
 
     if (disability === '33') personalMin += 3000;
     else if (disability === '65') personalMin += 9000;
 
-    // 3. General deduction for work income (Reducción por rendimientos del trabajo art. 20 LIRPF)
-    let workReduction = 2000;
-    if (gross <= 19747.50) {
-      workReduction = Math.min(6498, 6498 - (1.14 * (gross - 14047.50)));
-      if (workReduction < 2000) workReduction = 2000;
+    // 3. Gastos deducibles generales (Art. 19.2.f: 2.000 €) y Reducción Art. 20 LIRPF
+    const generalExpenses = 2000;
+    let art20Reduction = 0;
+    if (gross <= 14047.50) {
+      art20Reduction = 6498;
+    } else if (gross <= 19747.50) {
+      art20Reduction = Math.max(0, 6498 - (1.14 * (gross - 14047.50)));
     }
 
     // 4. Taxable Base (Base liquidable general)
-    const taxableBase = Math.max(0, gross - ssAnnual - workReduction);
+    const taxableBase = Math.max(0, gross - ssAnnual - generalExpenses - art20Reduction);
 
     // 5. Spanish progressive tax brackets (Estatal + Autonómico promedio):
     // 0 - 12.450 €: 19%

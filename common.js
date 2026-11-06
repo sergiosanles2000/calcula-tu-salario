@@ -93,6 +93,7 @@
 
   // 4. Privacy-Friendly Event Telemetry & GA4 Hook
   window.enterpriseTrack = function (eventName, eventParams) {
+    const consent = JSON.parse(localStorage.getItem('cookie_consent_v1') || '{}');
     const payload = {
       event: eventName,
       timestamp: new Date().toISOString(),
@@ -100,9 +101,41 @@
       ...eventParams
     };
     
-    // Push to dataLayer for GA4 if active
-    if (window.dataLayer) {
+    // Push to Google Analytics 4 dataLayer if initialized
+    if (window.dataLayer && consent.analytics !== false) {
       window.dataLayer.push(payload);
+    }
+
+    // Optional Remote Collector (e.g. Cloudflare Worker or HTTPS Beacon)
+    // Architectural Safeguard: Strictly prevent broken calls to localhost (127.0.0.1) from public visitor browsers
+    const remoteEndpoint = window.ENTERPRISE_TELEMETRY_URL;
+    if (remoteEndpoint && typeof remoteEndpoint === 'string') {
+      const isPublicSite = window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1';
+      const isLocalEndpoint = remoteEndpoint.includes('127.0.0.1') || remoteEndpoint.includes('localhost');
+      
+      if (isPublicSite && isLocalEndpoint) {
+        // Disallow mixed-content / unreachable localhost calls from public production
+        return;
+      }
+
+      if (consent.analytics !== false) {
+        try {
+          if (navigator.sendBeacon) {
+            const blob = new Blob([JSON.stringify(payload)], { type: 'application/json' });
+            navigator.sendBeacon(remoteEndpoint, blob);
+          } else {
+            fetch(remoteEndpoint, {
+              method: 'POST',
+              headers: { 'Content-Type': 'application/json' },
+              body: JSON.stringify(payload),
+              mode: 'cors',
+              keepalive: true
+            }).catch(() => {});
+          }
+        } catch (e) {
+          // Non-blocking silent fail
+        }
+      }
     }
   };
 
