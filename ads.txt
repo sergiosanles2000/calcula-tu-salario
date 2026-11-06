@@ -1,1 +1,7 @@
-google.com, pub-0000000000000000, DIRECT, f08c47fec0942fa0
+# ===================================================================
+# ads.txt - Especificacion IAB Tech Lab
+# Dominio: calculatusalario.es
+# Estado: Preparado para AdSense (Pendiente de aprobacion de cuenta)
+# ===================================================================
+# Google AdSense (Descomentar y sustituir con el Publisher ID real tras aprobacion):
+# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

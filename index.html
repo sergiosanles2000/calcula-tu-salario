@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculadora de Sueldo Bruto a Neto e IRPF 2026 | CalculaTuSalario</title>
   <meta name="description" content="Calcula una estimación detallada de tu nómina neta mensual en 12 o 14 pagas, porcentaje orientativo de retención IRPF, deducciones familiares y coste para la empresa.">
+  <meta name="enterprise-site-slug" content="calculatusalario">
   <link rel="canonical" href="https://sergiosanles2000.github.io/calcula-tu-salario/index.html">
   
   <!-- Open Graph / Social Sharing -->
@@ -19,8 +20,23 @@
   <meta name="twitter:title" content="Calculadora de Sueldo Bruto a Neto e IRPF 2026">
   <meta name="twitter:description" content="Calcula una estimación detallada de tu nómina neta mensual en 12 o 14 pagas, porcentaje orientativo de retención IRPF, deducciones familiares y coste para la empresa.">
 
-  <!-- Google AdSense Tag placeholder (Ready to activate upon publisher approval) -->
-  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-0000000000000000" crossorigin="anonymous"></script> -->
+  <!-- Google Consent Mode v2 (RGPD / ePrivacy: Default denied before explicit user action) -->
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('consent', 'default', {
+      'ad_storage': 'denied',
+      'ad_user_data': 'denied',
+      'ad_personalization': 'denied',
+      'analytics_storage': 'denied',
+      'wait_for_update': 500
+    });
+  </script>
+  <!-- Google Analytics 4 (gtag.js): Preparado para activacion via core/analytics_config.json o GA_MEASUREMENT_ID -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script> -->
+
+  <!-- Google AdSense: Listo para activacion tras aprobacion de la cuenta -->
+  <!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script> -->
 
   <link rel="stylesheet" href="style.css">
   
@@ -60,6 +76,14 @@
         "@type": "Answer",
         "text": "Se cobra exactamente lo mismo al año; en 14 pagas el salario se divide con dos pagas extras, mientras que en 12 pagas se prorratea mes a mes."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Cómo ahorra impuestos la retribución flexible en la nómina?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Conceptos como cheque restaurante, guardería o seguro médico están exentos de IRPF dentro de los límites legales, reduciendo la base imponible y aumentando el neto real."
+      }
     }
   ]
 }
@@ -89,10 +113,10 @@
   <!-- Main Content Area -->
   <main class="container" style="padding-top: 1.5rem; padding-bottom: 3rem;">
     
-        <div class="ad-slot-wrapper">
+        <div class="ad-slot-wrapper ad-slot-header-wrapper" role="region" aria-label="Espacio publicitario superior">
           <span class="ad-label">Publicidad</span>
           <div class="ad-slot ad-slot-leaderboard" data-slot="header-leaderboard">
-            <span>Espacio Publicitario Disponible &bull; Formato Leaderboard 728x90 / Responsive</span>
+            <span class="ad-placeholder-text">Espacio Publicitario Disponible &bull; Formato Leaderboard Responsivo 728x90 / 320x100</span>
           </div>
         </div>
         
@@ -241,10 +265,39 @@
       <p class="form-help">Desglose patronal: Contingencias Comunes (23,60%), Desempleo (5,50%), FOGASA (0,20%), Formación Profesional (0,60%) y Mecanismo de Equidad Intergeneracional MEI (0,58%).</p>
     </div>
 
-    <!-- Section 3: Autónomos RETA Calculator -->
+    
+    <!-- Commercial Affiliate Integration (CPL / CPA Non-Intrusive Partner Card) -->
+    <section class="affiliate-card" id="partners-recommendation" role="region" aria-label="Recomendación de servicios profesionales">
+      <div class="affiliate-header">
+        <span class="affiliate-badge">Optimización Fiscal de Nómina y Renta</span>
+        <span class="affiliate-disclosure-badge">Colaboración Patrocinada</span>
+      </div>
+      <div class="affiliate-body">
+        <h3 class="affiliate-title">Ahorra hasta 1.800 € al año en tu Declaración de la Renta y Retribución Flexible</h3>
+        <p class="affiliate-desc">Revisa gratis tus deducciones autonómicas, maternidad, movilidad geográfica y planes de retribución flexible con asesores tributarios colegiados.</p>
+        
+        <div class="affiliate-partners">
+          <span class="affiliate-partners-label">Entidades colaboradoras:</span>
+          <div class="affiliate-partner-tags"><span class="partner-tag">Asesorías Fiscales Colegiadas</span><span class="partner-tag">Software RRHH & Nómina</span><span class="partner-tag">Planes de Retribución Flexible</span></div>
+        </div>
+        
+        <div class="affiliate-cta-box">
+          <a href="#salary-form" class="btn-affiliate" target="_blank" rel="sponsored nofollow noopener">
+            Simular Ahorro Fiscal en IRPF &rarr;
+          </a>
+          <span class="affiliate-cta-subtext">Diagnóstico fiscal personalizado • Compatible con trabajadores por cuenta ajena y autónomos</span>
+        </div>
+      </div>
+      <div class="affiliate-footer">
+        <p class="affiliate-legal-note">Nota comercial: CalculaTuSalario ofrece herramientas gratuitas y puede mostrar recomendaciones patrocinadas de servicios fiscales y laborales.</p>
+      </div>
+    </section>
+    
+
+    <!-- Section 3: Autónomos RETA Calculator & Cross-links -->
     <div class="card" style="margin-bottom: 3rem;">
       <div class="card-header">
-        <h2 class="card-title">3. Calculadora de Cuota de Autónomos (Sistema RETA por Ingresos Reales)</h2>
+        <h2 class="card-title">3. Comparativa Rápida con Autónomos (Sistema RETA por Ingresos Reales)</h2>
         <p class="card-subtitle">Estima tu cuota mensual a la Seguridad Social según tu rendimiento neto mensual.</p>
       </div>
 
@@ -263,10 +316,22 @@
           <p class="form-help" id="autoEffectiveTaxRes" style="margin-top: 0.25rem;">-</p>
         </div>
       </div>
+
+      <div class="context-crosslink-card">
+        <div class="context-crosslink-content">
+          <strong>📊 ¿Trabajas por cuenta propia, evalúas un despido o buscas hipoteca con tu nómina?</strong>
+          <p>Utiliza nuestras calculadoras hermanas para simular los 15 tramos oficiales de la TGSS, tu indemnización legal o tu capacidad hipotecaria máxima (35% del sueldo neto).</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <a href="https://sergiosanles2000.github.io/cuotaautonomos-app/" class="context-crosslink-btn">Simulador RETA 15 Tramos &rarr;</a>
+          <a href="https://sergiosanles2000.github.io/indemnicalc-app/" class="context-crosslink-btn" style="background: var(--text-main);">Calcular Finiquito / Despido &rarr;</a>
+          <a href="https://sergiosanles2000.github.io/hipotecalia-app/" class="context-crosslink-btn" style="background: var(--success);">Simular Hipoteca &rarr;</a>
+        </div>
+      </div>
     </div>
 
     <!-- Section 4: Authoritative Guide -->
-    <article class="editorial-section">
+    <article class="editorial-section" id="editorial-guide">
       <h2>Guía Completa para Entender tu Nómina y las Retenciones de IRPF en 2026</h2>
       <p>Entender la diferencia entre salario bruto y neto es fundamental tanto para negociar ofertas laborales como para planificar la Declaración de la Renta anual ante la Agencia Tributaria.</p>
 
@@ -343,6 +408,16 @@
             <p>El Gobierno ajusta el reglamento de IRPF para que los perceptores del SMI no sufran retenciones a cuenta del IRPF, garantizando que el salario mínimo se perciba íntegro en términos netos fiscales.</p>
           </div>
         </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>¿Cómo funciona la retribución flexible (cheque restaurante, guardería, seguro médico)?</span>
+            <span>+</span>
+          </button>
+          <div class="faq-answer">
+            <p>La retribución flexible permite destinar hasta el 30% de tu salario bruto anual a productos exentos de IRPF: tickets restaurante (hasta 11 €/día laborable), seguro médico privado (hasta 500 €/año por miembro familiar) y cheque guardería (100% exento). Al reducirse tu base imponible de IRPF, tu sueldo neto disponible aumenta directamente.</p>
+          </div>
+        </div>
       </div>
     </section>
     
@@ -351,6 +426,66 @@
   <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container">
+      
+      <!-- Strategic Cross-Linking Network (Ecosistema de Herramientas Gratuitas) -->
+      <div class="footer-network" role="navigation" aria-label="Red de calculadoras especializadas">
+        <div class="footer-network-header">
+          <div class="footer-network-title">🌐 Ecosistema Digital de Calculadoras y Simuladores Oficiales</div>
+          <p class="footer-network-subtitle">Herramientas financieras, laborales, fiscales y de salud de acceso libre y cálculo instantáneo en tu navegador.</p>
+        </div>
+        <div class="network-grid">
+          <a href="https://sergiosanles2000.github.io/hipotecalia-app/" class="network-card" title="Hipotecalia - Simulador de hipotecas, cuadro de amortización francés y gastos de compraventa.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>🏠</span> Hipotecalia</span>
+                <span class="network-card-tag">Inmobiliario</span>
+              </div>
+              <p class="network-card-desc">Simulador de hipotecas, cuadro de amortización francés y gastos de compraventa.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+          <a href="index.html" class="network-card is-current" title="CalculaTuSalario - Calculadora de sueldo bruto a neto en 12/14 pagas, tramos IRPF 2026 y coste empresa.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>💼</span> CalculaTuSalario</span>
+                <span class="network-card-tag">Portal Actual</span>
+              </div>
+              <p class="network-card-desc">Calculadora de sueldo bruto a neto en 12/14 pagas, tramos IRPF 2026 y coste empresa.</p>
+            </div>
+            <span class="network-card-action">Estás aquí</span>
+          </a>
+          <a href="https://sergiosanles2000.github.io/indemnicalc-app/" class="network-card" title="IndemniCalc - Cálculo legal de indemnización por despido, salario diario oficial y liquidación de finiquito.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>⚖️</span> IndemniCalc</span>
+                <span class="network-card-tag">Derecho Laboral</span>
+              </div>
+              <p class="network-card-desc">Cálculo legal de indemnización por despido, salario diario oficial y liquidación de finiquito.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+          <a href="https://sergiosanles2000.github.io/cuotaautonomos-app/" class="network-card" title="CuotaAutónomos - Simulador oficial de cuotas por ingresos reales (RDL 13/2022) y regularización TGSS.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>📊</span> CuotaAutónomos</span>
+                <span class="network-card-tag">Autónomos RETA</span>
+              </div>
+              <p class="network-card-desc">Simulador oficial de cuotas por ingresos reales (RDL 13/2022) y regularización TGSS.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+          <a href="https://sergiosanles2000.github.io/macronutri-calc/" class="network-card" title="MacroNutri - Calculadora científica de gasto calórico TDEE, déficit energético y reparto de macronutrientes.">
+            <div>
+              <div class="network-card-top">
+                <span class="network-card-brand"><span>🥗</span> MacroNutri</span>
+                <span class="network-card-tag">Salud & Ciencia</span>
+              </div>
+              <p class="network-card-desc">Calculadora científica de gasto calórico TDEE, déficit energético y reparto de macronutrientes.</p>
+            </div>
+            <span class="network-card-action">Abrir calculadora &rarr;</span>
+          </a>
+        </div>
+      </div>
       <div class="footer-grid">
         <div class="footer-col">
           <h4>CalculaTuSalario</h4>
@@ -389,6 +524,21 @@
       <button id="cookie-reject" class="btn-cookie">Rechazar no esenciales</button>
     </div>
   </div>
+
+  
+  <!-- Sticky Bottom Anchor Ad (Better Ads Standards: dismissible, height < 30% viewport) -->
+  <div id="sticky-bottom-ad" class="ad-sticky-container" role="region" aria-label="Anuncio fijo inferior" style="display: none;">
+    <div class="ad-sticky-inner">
+      <div class="ad-sticky-header">
+        <span class="ad-label">Publicidad</span>
+        <button id="close-sticky-ad" class="ad-sticky-close" aria-label="Cerrar anuncio">&times;</button>
+      </div>
+      <div class="ad-slot ad-slot-sticky" data-slot="sticky-anchor">
+        <span class="ad-placeholder-text">Anuncio Fijo Inferior &bull; Formato Anchor Responsivo</span>
+      </div>
+    </div>
+  </div>
+        
 
   <script src="common.js"></script>
   <script src="app.js"></script>
