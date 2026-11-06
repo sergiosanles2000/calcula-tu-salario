@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://sergiosanles2000.github.io/calcula-tu-salario/sitemap.xml
